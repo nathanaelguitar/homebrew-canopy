@@ -1,9 +1,9 @@
 class CanopyCode < Formula
   desc "Terminal coding agent with remote control from the CanopyChat app"
   homepage "https://canopychat.app"
-  url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.7/canopy-code-2026.10.7-darwin-arm64.tar.gz"
-  version "2026.10.7"
-  sha256 "81202a29a4b1d6131a2687f925b315654dcaee83ecdc0fa98f5a12774bf8dd6a"
+  url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.8/canopy-code-2026.10.8-darwin-arm64.tar.gz"
+  version "2026.10.8"
+  sha256 "7ea521779ee74aa6c5859095c4914d2f436ddb2d07b2988777f1ecbc2c9c8877"
   license "Apache-2.0"
 
   depends_on arch: :arm64
