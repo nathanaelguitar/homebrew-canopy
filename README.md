@@ -27,4 +27,7 @@ Remote control from the CanopyChat app needs a Canopy account
 
 To update: `brew upgrade canopy-code`, then restart `canopy` and accept the daemon restart.
 
-Apple silicon Macs only for now.
+Works on Apple silicon Macs and on Linux (arm64 and x86_64) with Homebrew.
+Windows: `scoop install https://github.com/nathanaelguitar/canopy-code/releases/latest/download/canopy-code.json`, or download the zip from the [releases](https://github.com/nathanaelguitar/canopy-code/releases).
+
+Voice (macOS): run `/voice setup` in Canopy, then hold Space to talk. It runs on-device.
