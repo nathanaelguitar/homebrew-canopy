@@ -23,13 +23,14 @@ class CanopyCode < Formula
   end
 
   def install
-    bin.install "bin/canopy", "bin/canopy-gateway", "bin/canopy-channels", "bin/codex-code-mode-host"
-    # macOS: the on-device voice helper for hold-Space dictation (/voice setup).
-    bin.install "bin/canopy-voice-mac" if OS.mac?
-    (share/"canopy").install "share/canopy/web-shell"
-    # Linux: the sandbox's bubblewrap, used when the system has no `bwrap`. canopy finds it at
-    # <prefix>/codex-resources/bwrap; it stays off the PATH.
-    prefix.install "codex-resources" if OS.linux?
+    # The archive's layout goes to libexec as is, so canopy finds its helpers beside its real
+    # binary (and the gateway its Web Shell in ../share, the Linux sandbox its bubblewrap in
+    # ../codex-resources). Only the commands people run go on the PATH, as small exec wrappers.
+    # The helpers stay off it: `codex-code-mode-host` has the same name as the one OpenAI's
+    # `codex` cask puts in the same bin directory, which kept `brew link` from linking canopy.
+    libexec.install "bin", "share"
+    libexec.install "codex-resources" if OS.linux?
+    bin.write_exec_script %w[canopy canopy-gateway canopy-channels].map { |name| libexec/"bin"/name }
   end
 
   def caveats
@@ -54,5 +55,7 @@ class CanopyCode < Formula
 
   test do
     assert_match "Canopy Code", shell_output("#{bin}/canopy --version")
+    assert_predicate libexec/"bin/codex-code-mode-host", :executable?
+    refute_predicate bin/"codex-code-mode-host", :exist?
   end
 end
