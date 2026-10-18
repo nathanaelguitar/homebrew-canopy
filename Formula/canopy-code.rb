@@ -2,23 +2,23 @@
 class CanopyCode < Formula
   desc "Terminal coding agent with remote control from the CanopyChat app"
   homepage "https://canopychat.app"
-  version "2026.10.13"
+  version "2026.10.17"
   license "Apache-2.0"
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.13/canopy-code-2026.10.13-darwin-arm64.tar.gz"
-    sha256 "2bc84453032e160929525000f4a8584a16a1bd98420aeee3689e689b94227ae8"
+    url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.17/canopy-code-2026.10.17-darwin-arm64.tar.gz"
+    sha256 "00850455b31ca576dc28abb27913098f8c89872696aef4a0c22e0710ac4a990e"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.13/canopy-code-2026.10.13-linux-arm64.tar.gz"
-      sha256 "7948a37d35898a158f6a5f1c8183acefddd5e7b6b10c225a4703e3fa712b953e"
+      url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.17/canopy-code-2026.10.17-linux-arm64.tar.gz"
+      sha256 "9d3fc1577737a50fcd1ccfa89d92de2f5bfbe52772037287f16f390291b2f5c8"
     end
     on_intel do
-      url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.13/canopy-code-2026.10.13-linux-x64.tar.gz"
-      sha256 "8495017ac7b8ffffc6897f54b45eb3cc82cac60db23e93642a19da4aed2d6352"
+      url "https://github.com/nathanaelguitar/canopy-code/releases/download/v2026.10.17/canopy-code-2026.10.17-linux-x64.tar.gz"
+      sha256 "f0ccd36c7a2e7ac75af01f27a8865380efdbf164520694228de4f14e893bb092"
     end
   end
 
